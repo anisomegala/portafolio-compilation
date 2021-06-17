@@ -1,0 +1,16 @@
+.portafolioDirectory {
+  box-sizing: border-box;
+  margin: 7rem auto;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 1em;
+  grid-template-areas:
+    "webDev webDev socialMedia"
+    "artist artist socialMedia"
+    "model model github"
+    "mybio mybio mybio";
+  justify-content: center;
+  height: 75vh;
+}
