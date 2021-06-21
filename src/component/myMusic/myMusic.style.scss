@@ -1,0 +1,43 @@
+$size: 100px;
+$speed: 1.3s;
+$bar-width: ceil($size / 5);
+$gutter-width: floor(($size - $bar-width * 3) / 2);
+$bar-color: black;
+
+.icon-bars {
+  margin: 100px auto; // Just for presentation
+  position: relative;
+  width: $size;
+  height: $size;
+}
+
+.bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  width: $bar-width;
+  background-color: $bar-color;
+  animation: up-down $speed infinite;
+
+  &:nth-child(2) {
+    left: $bar-width + $gutter-width;
+    animation-delay: -$speed / 3 * 2;
+  }
+
+  &:nth-child(3) {
+    left: $bar-width * 2 + $gutter-width * 2;
+    animation-delay: -$speed / 3;
+  }
+
+  @keyframes up-down {
+    from {
+      top: $size 50%;
+      top: 0;
+    }
+
+    to {
+      top: $size;
+    }
+  }
+}

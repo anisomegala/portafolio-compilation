@@ -1,5 +1,7 @@
 import React from 'react'; 
-import { PortafolioItem } from '../portafolio/portafolio-item.component.jsx';
+import { withRouter } from 'react-router-dom';
+import  PortafolioItem  from '../portafolio/portafolio-item.component.jsx';
+import { useTransition, animated } from 'react-spring';
 import './portafolioDirectory.style.scss';
 
 
@@ -14,21 +16,32 @@ constructor() {
                  imgUrl: 'https://i.ibb.co/McwpzdF/Vamos-Latam-Colab-0224.jpg',
                  id: 1,
                  grid: 'gridItem1',
-                 linkUrl: 'shop/hats'
+                 linkUrl: 'anielsomeillan/web-developper',
+                 from: {
+                   opacity: 0
+                 },
+                 to: {
+                   opacity: 1
+                 },
+                 config: {
+                   mass: 10,
+                   tension: 10
+                 },
+                 delay: '1000'
                },
                {
                  title: 'Artist',
                  imgUrl: 'https://i.ibb.co/8d3mXYz/img-4.jpg',
                  id: 2,
                  grid: 'gridItem2',
-                 linkUrl: 'shop/jackets'
+                 linkUrl: 'anielsomeillan/artist'
                },
                { 
                  title: 'Social Media',
                  imgUrl: 'https://i.ibb.co/WHjfj6r/V7A1865.jpg',
                  id: 3,
                  grid: 'gridItem3',
-                 linkUrl: 'shop/sneakers'
+                 linkUrl: ''
                },
                {
                  title: 'Model',
@@ -36,7 +49,7 @@ constructor() {
                  size: 'large',
                  id: 4,
                  grid: 'gridItem4',
-                 linkUrl: 'shop/womens'
+                 linkUrl: 'anielsomeillan/model'
                },
                {
                  title: 'Github',
@@ -44,7 +57,7 @@ constructor() {
                  size: 'large',
                  id: 5,
                  grid: 'gridItem5',
-                 linkUrl: 'shop/mens'
+                 linkUrl: ''
                },
                {
                  title: 'My Bio',
@@ -52,7 +65,7 @@ constructor() {
                  size: 'large',
                  id: 6,
                  grid: 'gridItem6',
-                 linkUrl: 'shop/mens'
+                 linkUrl: 'anielsomeillan/bio'
                }
              
          ]
@@ -61,16 +74,16 @@ constructor() {
 }
 
 render () {
+
 return  <div className="portafolioDirectory">
             {
-                this.state.portafolios.map(({title, imgUrl, id, grid}) => {
-                    return  <PortafolioItem key= {id} title={title}  imgUrl={imgUrl} grid={grid}/>
+                this.state.portafolios.map(({id, ...othersProps}) => {
+                    return  <PortafolioItem key= {id} {...othersProps}/>
                 })
             }
         </div>
 
 }
-
 };
 
 export default Directory;

@@ -1,0 +1,21 @@
+.resume {
+  max-width: 800px;
+  margin: auto;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+
+  .resume-content {
+    background-color: rgba(156, 100, 19, 0.3);
+    border-radius: 3px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+}
