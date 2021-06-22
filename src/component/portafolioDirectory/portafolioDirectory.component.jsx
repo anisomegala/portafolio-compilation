@@ -52,12 +52,12 @@ constructor() {
                  linkUrl: 'anielsomeillan/model'
                },
                {
-                 title: 'Github',
+                 title: 'My Courses',
                  imgUrl: 'https://i.ibb.co/h7bD6DF/V7A5489.jpg',
                  size: 'large',
                  id: 5,
                  grid: 'gridItem5',
-                 linkUrl: ''
+                 linkUrl: 'anielsomeillan/my-courses'
                },
                {
                  title: 'My Bio',

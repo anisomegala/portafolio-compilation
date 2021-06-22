@@ -3,6 +3,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import  HomePage from './pages/homepage/homepage.component.jsx';
 import ArtistPage from './pages/artistPage/artist.jsx';
 import Bio from './pages/bioPage/bio.jsx';
+import CoursesPage from './pages/coursesPage/coursesPage.jsx';
+
 
 import './App.css';
 
@@ -24,6 +26,7 @@ function App() {
           <Route  exact path='/anielsomeillan/web-developper' component={ WebDeveloper } />
           <Route  exact path='/anielsomeillan/artist' component={ ArtistPage } />
           <Route  exact path='/anielsomeillan/bio' component={ Bio } />
+          <Route  exact path='/anielsomeillan/my-courses' component={ CoursesPage } />
         </Switch>
       </BrowserRouter>
     </div>

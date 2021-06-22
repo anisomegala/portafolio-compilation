@@ -1,6 +1,7 @@
 import React from 'react';
 import ARTIST_DATA from './artistData.jsx';
-import Mymusic from '../../component/myMusic/mymusic.component.jsx';
+// import Mymusic from '../../component/myMusic/mymusic.component.jsx';
+// import  Header  from '../../component/header/header.component.jsx';
 
 
 import './artist.style.scss'; 
@@ -40,8 +41,8 @@ class ArtistPage extends React.Component {
   
 
     render() {    
-    return (
-        <div className='startContent'>
+    return (  
+         <div className='startContent'>
            {
                this.state.grid.map(({ id, img, name, grid, head }, index ) => (
                <div
