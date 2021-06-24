@@ -2,7 +2,7 @@
   background-color: white;
   border-radius: 5px;
   padding: 1rem;
-  width: 50%;
+  width: 30vw;
   height: 50px;
   min-width: 100px;
   letter-spacing: 0.5px;
@@ -10,6 +10,7 @@
   text-transform: uppercase;
   font-weight: bolder;
   cursor: pointer;
+  margin-bottom: 5px;
 
   &:hover {
     background-color: rgb(216, 216, 244);

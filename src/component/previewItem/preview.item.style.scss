@@ -1,0 +1,40 @@
+.Card-item {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  margin: 0 1rem;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: -4px -4px 20px 3px rgba(0, 0, 0, 0.23);
+  overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+
+    & .img {
+      transform: scale(1.05);
+      transition: transform 2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    }
+    & .Card-item {
+      opacity: 0.9;
+    }
+  }
+
+  .img {
+    width: 100%;
+    height: 90%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .footer-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+}
