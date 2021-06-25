@@ -7,25 +7,25 @@ const PREVIEW_DATA = [
         {
           id: 1,
           name: 'Electric Bass Course',
-          imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
+          imageUrl: 'https://i.ibb.co/cwVmXGd/Vamos-Latam-Colab-0531.jpg',
           price: 25
         },
         {
           id: 2,
           name: 'Double Bass Course',
-          imageUrl: 'https://i.ibb.co/ypkgK0X/blue-beanie.png',
+          imageUrl: 'https://i.ibb.co/qrN0jc3/Vamos-Latam-Colab-0059.jpg',
           price: 18
         },
         {
           id: 3,
           name: 'Acoustic Guitar Course',
-          imageUrl: 'https://i.ibb.co/QdJwgmp/brown-cowboy.png',
+          imageUrl: 'https://i.ibb.co/ngWpFpC/rio-lecatompessy-usd-JDh-C2-Ap-I-unsplash.jpg',
           price: 35
         },
         {
           id: 4,
           name: 'Cuban Music Worshop',
-          imageUrl: 'https://i.ibb.co/RjBLWxB/grey-brim.png',
+          imageUrl: 'https://i.ibb.co/6RtTNQ9/Vamos-Latam-Colab-0419.jpg',
           price: 25
         }
       ]
@@ -105,13 +105,13 @@ const PREVIEW_DATA = [
         {
           id: 20,
           name: 'Afrofrenia',
-          imageUrl: 'https://i.ibb.co/N71k1ML/grey-jean-jacket.png',
+          imageUrl: 'https://i.ibb.co/fMTt79W/Odyssey-Optimized.jpg',
           price: 5
         },
         {
           id: 21,
           name: 'Others Singles',
-          imageUrl: 'https://i.ibb.co/s96FpdP/brown-shearling.png',
+          imageUrl: 'https://i.ibb.co/R7vWjjr/Quilmbo-Optimized.jpg',
           price: 5
         }
       ]

@@ -4,7 +4,7 @@ import  HomePage from './pages/homepage/homepage.component.jsx';
 import ArtistPage from './pages/artistPage/artist.jsx';
 import Bio from './pages/bioPage/bio.jsx';
 import CoursesPage from './pages/coursesPage/coursesPage.jsx';
-import { auth } from './firebase/firebase.js';
+// import { auth } from './firebase/firebase.js';
 
 
 import './App.css';
@@ -23,23 +23,23 @@ class App extends React.Component {
     super();
 
     this.state = {
-      currentUser: null
+      // currentUser: null
     }
   }
 
-  unsubscribeFromAuth = null
+  // unsubscribeFromAuth = null
 
-  componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user });
+  // componentDidMount() {
+  //   this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+  //     this.setState({ currentUser: user });
 
-      console.log(this.user);
-    })
-  }
+  //     console.log(this.user);
+  //   })
+  // }
 
-  componentWillUnmount() {
-    this.unsubscribeFromAuth();
-  }
+  // componentWillUnmount() {
+  //   this.unsubscribeFromAuth();
+  // }
 
   render() {
     return (

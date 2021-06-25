@@ -1,7 +1,7 @@
 import React from 'react'; 
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 import  PortafolioItem  from '../portafolio/portafolio-item.component.jsx';
-import { useTransition, animated } from 'react-spring';
+// import { useTransition, animated } from 'react-spring';
 import './portafolioDirectory.style.scss';
 
 

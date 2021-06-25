@@ -2,7 +2,7 @@ import React from 'react';
 import './signIn.style.scss';
 import  FormInput from '../form-input/form-input.component.jsx';
 import Button from '../custom-button/button.component';
-import { signInWithGoogle } from '../../firebase/firebase.js';
+import { auth, signInWithGoogle } from '../../firebase/firebase.js';
 
 
 
@@ -18,8 +18,21 @@ class SingIn extends React.Component {
     }
 
 
-    handleSubmit = event => {
+    handleSubmit = async event => {
         event.preventDefault();
+
+        const { email, password} = this.state;
+
+        try {
+            await auth.signInWithEmailAndPassword(email, password);
+            this.setState({
+                email: '',
+                password: ''
+            })
+        } catch(e) {
+            console.error(e);
+
+        }
 
         this.setState({ email: '', password: '' });
     };
@@ -35,8 +48,8 @@ class SingIn extends React.Component {
 
     render() {
         return (
-            <div className='courses-page'>
-                <div className='sign-in'>
+            <div className='courses-page' >
+                <div className='sign-in' id='signIn'>
                 <h3>Sign in for accsess to my courses!</h3>
 
                 <form onSubmit={this.handleSubmit}>
