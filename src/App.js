@@ -1,13 +1,17 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import  HomePage from './pages/homepage/homepage.component.jsx';
 import ArtistPage from './pages/artistPage/artist.jsx';
 import Bio from './pages/bioPage/bio.jsx';
 import CoursesPage from './pages/coursesPage/coursesPage.jsx';
 // import { auth } from './firebase/firebase.js';
+import { connect } from 'react-redux';
+import ShopPage from './pages/ShopPage/shop.page';
+
 
 
 import './App.css';
+
 
 
 const WebDeveloper = () => (
@@ -50,7 +54,8 @@ class App extends React.Component {
             <Route  exact path='/anielsomeillan/web-developper' component={ WebDeveloper } />
             <Route  exact path='/anielsomeillan/artist' component={ ArtistPage } />
             <Route  exact path='/anielsomeillan/bio' component={ Bio } />
-            <Route  exact path='/anielsomeillan/my-courses' component={ CoursesPage } />
+            <Route  exact path='/anielsomeillan/shop'  render={() => ( !this.props.currentUser) ? (<Redirect to='/anielsomeillan/my-courses'/>) : (<ShopPage/>) } />
+            <Route  exact path='/anielsomeillan/my-courses' render={() => this.props.currentUser ? (<Redirect to='/anielsomeillan/shop'/>) : (<CoursesPage/>) } />
           </Switch>
         </BrowserRouter>
       </div>
@@ -59,4 +64,10 @@ class App extends React.Component {
   
 }
 
-export default App;
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser
+});
+
+
+
+export default connect(mapStateToProps)(App);

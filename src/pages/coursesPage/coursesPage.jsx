@@ -9,6 +9,8 @@ import SignUp from '../../component/sign-Up/signUp.component';
 import { connect } from 'react-redux';
 import { setCurrentUser } from '../../redux/user/user.action';
 
+
+
 class CoursesPage extends React.Component {
     constructor(props) {
         super(props);
@@ -64,8 +66,11 @@ render() {
     }
 }
 
+const mapStateToProps = ({ user }) => ({
+    currentUser: user.currentUser
+});
 const mapDispatchToProps = dispatch => ({
     setCurrentUser: user => dispatch(setCurrentUser(user)) 
-});
+  });
 
-export default connect(null, mapDispatchToProps)(CoursesPage);
+export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);

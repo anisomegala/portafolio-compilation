@@ -5,7 +5,8 @@ import { ReactComponent as Logo } from '../../assets/logo/aniel.svg';
 import { auth } from '../../firebase/firebase';
 import { HashLink } from 'react-router-hash-link';
 import { connect } from 'react-redux';
-import userEvent from '@testing-library/user-event';
+import { setCurrentUser } from '../../redux/user/user.action';
+
 
 
 const Header = ({ currentUser }) => (
@@ -31,6 +32,10 @@ const Header = ({ currentUser }) => (
  
 const mapStateToProps = state => ({
     currentUser: state.user.currentUser
-})
+});
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = dispatch => ({
+    setCurrentUser: user => dispatch(setCurrentUser(user)) 
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
