@@ -4,6 +4,8 @@ import './header.style.scss';
 import { ReactComponent as Logo } from '../../assets/logo/aniel.svg'; 
 import { auth } from '../../firebase/firebase';
 import { HashLink } from 'react-router-hash-link';
+import { connect } from 'react-redux';
+import userEvent from '@testing-library/user-event';
 
 
 const Header = ({ currentUser }) => (
@@ -26,6 +28,9 @@ const Header = ({ currentUser }) => (
             </div>        
     </div>
 );
+ 
+const mapStateToProps = state => ({
+    currentUser: state.user.currentUser
+})
 
-
-export default Header;
+export default connect(mapStateToProps)(Header);

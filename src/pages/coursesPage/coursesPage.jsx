@@ -6,6 +6,8 @@ import PREVIEW_DATA from './preview-course.data';
 import Header from '../../component/header/header.component.jsx';
 import { auth, creatUser } from '../../firebase/firebase'
 import SignUp from '../../component/sign-Up/signUp.component';
+import { connect } from 'react-redux';
+import { setCurrentUser } from '../../redux/user/user.action';
 
 class CoursesPage extends React.Component {
     constructor(props) {
@@ -13,27 +15,25 @@ class CoursesPage extends React.Component {
 
         this.state = {
             coursesPriview: PREVIEW_DATA,
-            currentUser: null
+           
         }
     }
     unsubscribeFromAuth = null
 
     componentDidMount() {
+        const { setCurrentUser } = this.props;
         this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth => {
             if (userAuth) {
                 const userRef = await creatUser(userAuth);
 
                 userRef.onSnapshot(snapShot => {
-                    this.setState({
-                        currentUser: {
+                    setCurrentUser({
                             id: snapShot.id,
                             ...snapShot.data()
-                        }
                     });
-                })
-            } else {
-                this.setState({ currentUser: userAuth });
-            }
+                });
+            } 
+            setCurrentUser(userAuth);
         })
       }
 
@@ -45,7 +45,7 @@ class CoursesPage extends React.Component {
 render() {
     const { coursesPriview } = this.state;
     return <div className="SignIn-signOut-courses">
-        <Header  currentUser={ this.state.currentUser }/>
+        <Header />
         <div className='heading-courses'>
             <h1>My Shop</h1>  
         </div>
@@ -64,6 +64,8 @@ render() {
     }
 }
 
+const mapDispatchToProps = dispatch => ({
+    setCurrentUser: user => dispatch(setCurrentUser(user)) 
+});
 
-
-export default CoursesPage;
+export default connect(null, mapDispatchToProps)(CoursesPage);
