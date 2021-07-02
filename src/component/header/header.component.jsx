@@ -6,13 +6,17 @@ import { auth } from '../../firebase/firebase';
 import { HashLink } from 'react-router-hash-link';
 import { connect } from 'react-redux';
 import { setCurrentUser } from '../../redux/user/user.action';
+import CartItem from '../cart-item/cart-item.component';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+
 
 
 
 const Header = ({ currentUser }) => (
     <div className='header'>
             <Link className='link' to='/'>
-                <Logo className='logo'></Logo>
+                <Logo
+                className='logo'></Logo>
             </Link>
             <div className='options'>
                 <Link className='link' to='/'> Portafolios </Link>
@@ -25,8 +29,9 @@ const Header = ({ currentUser }) => (
                                 scroll={(el) => el.scrollIntoView({ behavior: 'auto', block: 'end'})}
                     >Sign In</HashLink>
                 }
-                
-            </div>        
+                <CartItem />
+            </div> 
+            <CartDropdown />       
     </div>
 );
  

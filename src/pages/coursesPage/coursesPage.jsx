@@ -8,7 +8,8 @@ import { auth, creatUser } from '../../firebase/firebase'
 import SignUp from '../../component/sign-Up/signUp.component';
 import { connect } from 'react-redux';
 import { setCurrentUser } from '../../redux/user/user.action';
-
+import { motion } from 'framer-motion';
+import { PageVariants, PageTransitions } from '../../component/animations/animations.component';
 
 
 class CoursesPage extends React.Component {
@@ -46,7 +47,13 @@ class CoursesPage extends React.Component {
 
 render() {
     const { coursesPriview } = this.state;
-    return <div className="SignIn-signOut-courses">
+    return <motion.div
+            exit='out'
+            animate='in'
+            initial='out'
+            variants={PageVariants}
+            transition={ PageTransitions }
+            className="SignIn-signOut-courses">
         <Header />
         <div className='heading-courses'>
             <h1>My Shop</h1>  
@@ -62,7 +69,7 @@ render() {
             <SignUp/>
         </div>
         
-    </div>
+    </motion.div>
     }
 }
 
