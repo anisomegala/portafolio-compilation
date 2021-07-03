@@ -47,6 +47,7 @@ class CoursesPage extends React.Component {
 
 render() {
     const { coursesPriview } = this.state;
+    const { currentUser } = this.props;
     return <motion.div
             exit='out'
             animate='in'
@@ -63,11 +64,14 @@ render() {
         <PreviewCourse key={ id } {...otherProps} />
          ))   
         }
+        {
+            currentUser ? null :  <div className="signIn-signUp"> 
+                <SingIn />
+                <SignUp/>
+            </div>
 
-        <div className="signIn-signUp"> 
-            <SingIn />
-            <SignUp/>
-        </div>
+        }
+       
         
     </motion.div>
     }

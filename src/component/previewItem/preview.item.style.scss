@@ -6,8 +6,8 @@
   margin: 0 1rem;
   justify-content: center;
   align-items: center;
-
-  border-radius: 5px;
+  position: relative;
+  border-radius: 10px;
   box-shadow: -4px -4px 20px 3px rgba(0, 0, 0, 0.23);
   overflow: hidden;
 
@@ -20,6 +20,7 @@
     }
     & .Card-item {
       opacity: 0.9;
+      overflow: hidden;
     }
   }
 
@@ -30,11 +31,16 @@
     background-position: center;
   }
 
+  .custom-button {
+    width: 80%;
+    opacity: 0.9;
+  }
+
   .footer-item {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin: 10px auto;
   }
 }

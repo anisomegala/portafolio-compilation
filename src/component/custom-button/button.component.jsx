@@ -3,8 +3,9 @@ import './button.style.scss';
 
 
 
-const Button = ({ children, ...others}) => (
-    <button className='custom-button' { ...others }>
+
+const Button = ({ children, inverted, ...others}) => (
+    <button className={`${inverted ? 'inverted' :  ''} custom-button`} { ...others }>
         {children}
     </button>
 );

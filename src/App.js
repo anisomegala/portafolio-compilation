@@ -55,8 +55,7 @@ class App extends React.Component {
             <Route  exact path='/anielsomeillan/web-developper' component={ WebDeveloper } />
             <Route  exact path='/anielsomeillan/artist' component={ ArtistPage } />
             <Route  exact path='/anielsomeillan/bio' component={ Bio } />
-            <Route  exact path='/anielsomeillan/shop'  render={() => ( !this.props.currentUser) ? (<Redirect to='/anielsomeillan/my-courses'/>) : (<ShopPage/>) } />
-            <Route  exact path='/anielsomeillan/my-courses' render={() => this.props.currentUser ? (<Redirect to='/anielsomeillan/shop'/>) : (<CoursesPage/>) } />
+            <Route  exact path='/anielsomeillan/my-courses' component={ CoursesPage} />
           </Switch>
         </AnimatePresence>  
       </div>
