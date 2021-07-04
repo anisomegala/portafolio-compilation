@@ -30,7 +30,10 @@ const Header = ({ currentUser, hidden }) => (
                                 scroll={(el) => el.scrollIntoView({ behavior: 'auto', block: 'end'})}
                     >Sign In</HashLink>
                 }
-                <CartItem />
+                {
+                    !currentUser ? null : <CartItem />
+                }
+                
             </div> 
             {
                 hidden ? null : <CartDropdown /> 

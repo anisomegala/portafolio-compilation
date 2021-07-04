@@ -2,10 +2,12 @@ import React from 'react';
 import './preview.item.style.scss';
 import Button  from '../custom-button/button.component';
 import { connect } from 'react-redux';
+import {addItem} from '../../redux/shoooping-cart/cart.action';
 
 
-const PreviewCard = ({ id, name, imageUrl, currentUser }) => (
-    <div className='Card-item'>
+const PreviewCard = ({ item, currentUser, addItem }) => {
+    const { name, imageUrl } = item;
+  return <div className='Card-item'>
         <div className='img'
              style={{
                 backgroundImage: `url(${imageUrl})`
@@ -15,15 +17,19 @@ const PreviewCard = ({ id, name, imageUrl, currentUser }) => (
             <span className='name'>{name}</span>  
         </div> 
         {
-            !currentUser ? null : <Button inverted> Add item to cart</Button> 
+            !currentUser ? null : <Button inverted onClick={() => addItem(item) } > Add item to cart</Button> 
 
         } 
               
     </div>
-);
+};
 
 const MapStateToProps = ({ user }) => ({
     currentUser: user.currentUser
 });
 
-export default connect(MapStateToProps)(PreviewCard);
+const MapDispatchToProps = dispatch => ({
+    addItem: item => dispatch(addItem(item))
+});
+
+export default connect(MapStateToProps, MapDispatchToProps)(PreviewCard);
