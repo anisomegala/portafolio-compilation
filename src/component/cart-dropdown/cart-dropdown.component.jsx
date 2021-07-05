@@ -5,19 +5,30 @@ import CartAddedItems from '../cart-added-Items/cartAddedItems.component';
 import { connect } from 'react-redux';
 import { selectCartItems } from '../../redux/shoooping-cart/cartSelectors/cart.selector';
 import { createStructuredSelector } from 'reselect';
+import { withRouter } from 'react-router-dom';
+import { ToggleCartHidden } from '../../redux/shoooping-cart/cart.action';
 
-const CartDropdown = ({ cartItems }) => (
+const CartDropdown = ({ cartItems, history, dispatch }) => (
     <div className='cart-dropdown'> 
         <div className='cart-items'>
           {
+              cartItems.length ? 
               cartItems.map(cartItem => <CartAddedItems key={cartItem.id} item={cartItem}/>)
+              :
+              <span className='empty-message'>No items Added</span>
           }  
         </div>
-        <Button> Go to checkout </Button>
+        <Button onClick={
+            cartItems.length ? 
+            () => {history.push('/checkout'); dispatch(ToggleCartHidden())}
+            :
+            null
+            } > Go to checkout </Button>
     </div>
 );
 
 const MapStateToProps = createStructuredSelector({
     cartItems: selectCartItems
 });
-export default connect(MapStateToProps)(CartDropdown);
+
+export default withRouter(connect(MapStateToProps)(CartDropdown));
