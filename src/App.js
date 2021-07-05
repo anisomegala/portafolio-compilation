@@ -5,8 +5,10 @@ import ArtistPage from './pages/artistPage/artist.jsx';
 import Bio from './pages/bioPage/bio.jsx';
 import CoursesPage from './pages/coursesPage/coursesPage.jsx';
 import { connect } from 'react-redux';
-import ShopPage from './pages/ShopPage/shop.page';
-import { motion, AnimatePresence } from "framer-motion"
+// import ShopPage from './pages/ShopPage/shop.page';
+import { AnimatePresence } from "framer-motion";
+import { createStructuredSelector } from 'reselect';
+import { selectCurrentUser } from './redux/user/userSelector/selectUser';
 
 
 
@@ -64,8 +66,8 @@ class App extends React.Component {
   
 }
 
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
 });
 
 
