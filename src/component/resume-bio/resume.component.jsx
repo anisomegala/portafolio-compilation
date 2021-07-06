@@ -1,12 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TextVariants } from '../animations/animations.component';
+import CloseIconPage from '../closeIcon/closeIcon.component';
  
 import './resume.style.scss';
 
 const Resume = () => (
     <div className='resume'> 
         <div className='resume-content'>
+        <CloseIconPage />
             <h1> My Bio </h1>
             <motion.p
                 initial='out'

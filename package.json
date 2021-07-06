@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
+    "@svgr/cli": "^5.5.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -39,6 +40,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "svg-to-jsx": "svgr < src/svgr/cancel.svg > src/component/closeIcon/closeIcon.js --svgo-config src/svgr/svgo.json",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

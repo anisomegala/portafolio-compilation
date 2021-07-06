@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './header.style.scss';
-import { ReactComponent as Logo } from '../../assets/logo/aniel.svg'; 
+import AnielLogo  from '../../assets/Aniel'; 
 import { auth } from '../../firebase/firebase';
 import { HashLink } from 'react-router-hash-link';
 import { connect } from 'react-redux';
@@ -19,8 +19,8 @@ import {selectCartToggle} from '../../redux/shoooping-cart/cartSelectors/cart.se
 const Header = ({ currentUser, hidden }) => (
     <div className='header'>
             <Link className='link' to='/'>
-                <Logo
-                className='logo'></Logo>
+                <AnielLogo
+                className='logo'></AnielLogo>
             </Link>
             <div className='options'>
                 <Link className='link' to='/'> Portafolios </Link>
