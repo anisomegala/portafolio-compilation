@@ -1,6 +1,6 @@
 import * as React from "react";
 import './anielogo.style.scss';
-import { motion } from 'framer-motion';
+import { motion, useSpring } from 'framer-motion';
 
 
 
@@ -15,7 +15,7 @@ function AnielLogo(props) {
     close: {
       opacity: 0.9,
       rotate: 0
-    }
+    },
   };
 
 
@@ -32,6 +32,7 @@ function AnielLogo(props) {
       initial={false}
       animate={isOpen ? 'open' : 'close'}
       variants={logoVariants }
+      transition={{type: 'spring', stiffness: 90}}
       whileHover={{ scale: 0.9 }}
       className='svgLogo'
       // whileTap={logoMovements}

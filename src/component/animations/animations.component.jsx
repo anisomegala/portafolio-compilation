@@ -25,7 +25,7 @@ export const PageVariants = {
 
 
 export const PageTransitions = { 
-    duration: 1
+    duration: 0.4
 }
 
 export const  TextVariants = {
