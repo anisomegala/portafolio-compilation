@@ -1,8 +1,8 @@
 import React from 'react';
 import './coursespage.style.scss';
 import SingIn from '../../component/signIn/signIn.component';
-import PreviewCourse  from '../../component/courses-preview/previewCourse.component';
-import PREVIEW_DATA from './preview-course.data';
+import CoursesPriview from '../../component/courses-overview/courses-overview.component';
+
 import Header from '../../component/header/header.component.jsx';
 import { auth, creatUser } from '../../firebase/firebase'
 import SignUp from '../../component/sign-Up/signUp.component';
@@ -13,14 +13,7 @@ import { PageVariants, PageTransitions } from '../../component/animations/animat
 
 
 class CoursesPage extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            coursesPriview: PREVIEW_DATA,
-           
-        }
-    }
+    
     unsubscribeFromAuth = null
 
     componentDidMount() {
@@ -46,7 +39,6 @@ class CoursesPage extends React.Component {
  
 
 render() {
-    const { coursesPriview } = this.state;
     const { currentUser } = this.props;
     return <motion.div
             exit='out'
@@ -59,11 +51,7 @@ render() {
         <div className='heading-courses'>
             <h1>My Shop</h1>  
         </div>
-        {
-        coursesPriview.map(({id, ...otherProps}) => (
-        <PreviewCourse key={ id } {...otherProps} />
-         ))   
-        }
+        <CoursesPriview /> 
         {
             currentUser ? null :  <div className="signIn-signUp"> 
                 <SingIn />

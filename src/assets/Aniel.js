@@ -1,6 +1,6 @@
 import * as React from "react";
 import './anielogo.style.scss';
-import { motion, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 
 
