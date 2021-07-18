@@ -3,6 +3,7 @@ import userReducer from './user/user.reducer';
 import CartReducer from './shoooping-cart/cart.reducer';
 import  directoryReducer from './directory/directory.reducer';
 import shopReducer from './shopReducer/shop.reducer';
+import artistReducer from './artistPageReducer/artistReducer';
 
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
@@ -17,7 +18,8 @@ const rootReducer =  combineReducers({
     user: userReducer,
     cart: CartReducer,
     directory: directoryReducer,
-    shop: shopReducer
+    shop: shopReducer,
+    artist: artistReducer
 });
 
 

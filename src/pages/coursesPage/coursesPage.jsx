@@ -2,7 +2,8 @@ import React from 'react';
 import './coursespage.style.scss';
 import SingIn from '../../component/signIn/signIn.component';
 import CoursesPriview from '../../component/courses-overview/courses-overview.component';
-
+import CategoryPage from '../category/category.component';
+import {Route} from 'react-router-dom';
 import Header from '../../component/header/header.component.jsx';
 import { auth, creatUser } from '../../firebase/firebase'
 import SignUp from '../../component/sign-Up/signUp.component';
@@ -13,6 +14,12 @@ import { PageVariants, PageTransitions } from '../../component/animations/animat
 
 
 class CoursesPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+
+        }
+    }
     
     unsubscribeFromAuth = null
 
@@ -40,6 +47,7 @@ class CoursesPage extends React.Component {
 
 render() {
     const { currentUser } = this.props;
+    console.log(this.props.match.path   );
     return <motion.div
             exit='out'
             animate='in'
@@ -51,16 +59,14 @@ render() {
         <div className='heading-courses'>
             <h1>My Shop</h1>  
         </div>
-        <CoursesPriview /> 
+        <Route exact path={`${this.props.match.path}`} component={CoursesPriview} /> 
+        <Route path={`${this.props.match.path}/:collectionId`} component={CategoryPage} /> 
         {
             currentUser ? null :  <div className="signIn-signUp"> 
                 <SingIn />
                 <SignUp/>
             </div>
-
-        }
-       
-        
+        }   
     </motion.div>
     }
 }

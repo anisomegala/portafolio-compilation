@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {connect} from 'react-redux';
 import './courses-overview.style.scss';
 import { createStructuredSelector } from 'reselect';
@@ -8,13 +9,13 @@ import { motion } from 'framer-motion';
 
 
 
-const CoursesPriview = ({collections}) => (
+const CoursesPriview = ({ collections }) => (
     <motion.div 
     
         className='courses-overview'>
         {
         collections.map(({id, ...otherProps}) => (
-        <PreviewCourse key={ id } {...otherProps} />
+        <PreviewCourse  key={ id } {...otherProps} />
          ))}
     </motion.div>
 );
