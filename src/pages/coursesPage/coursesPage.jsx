@@ -2,7 +2,7 @@ import React from 'react';
 import './coursespage.style.scss';
 import SingIn from '../../component/signIn/signIn.component';
 import CoursesPriview from '../../component/courses-overview/courses-overview.component';
-import CategoryPage from '../category/category.component';
+
 import {Route} from 'react-router-dom';
 import Header from '../../component/header/header.component.jsx';
 import { auth, creatUser } from '../../firebase/firebase'
@@ -60,7 +60,7 @@ render() {
             <h1>My Shop</h1>  
         </div>
         <Route exact path={`${this.props.match.path}`} component={CoursesPriview} /> 
-        <Route path={`${this.props.match.path}/:collectionId`} component={CategoryPage} /> 
+      
         {
             currentUser ? null :  <div className="signIn-signUp"> 
                 <SingIn />

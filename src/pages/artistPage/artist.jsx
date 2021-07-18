@@ -2,6 +2,7 @@ import React from 'react';
 import  { createStructuredSelector} from 'reselect';
 import { selectGridArtist } from '../../redux/artistPageReducer/artistSelector';
 import { connect } from 'react-redux';
+import CloseIconPage from '../../component/closeIcon/closeIcon.component';
 // import Mymusic from '../../component/myMusic/mymusic.component.jsx';
 // import  Header  from '../../component/header/header.component.jsx';
 
@@ -12,6 +13,7 @@ import './artist.style.scss';
 
 const ArtistPage = ({ id, img, name, grid, head }) => (
        <div className='startContent'>
+           <CloseIconPage /> 
            {
                grid.map(({ id, img, name, grid, head }, index ) => (
                <div

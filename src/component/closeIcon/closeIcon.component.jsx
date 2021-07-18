@@ -43,7 +43,7 @@ CloseIconPage.propTypes = {
 };
 
 CloseIconPage.defaultProps = {
-  color: "white",
+  color: 'white',
   size: 25
 }
 
