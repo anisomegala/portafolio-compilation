@@ -1,4 +1,7 @@
+import artistType from './artist.type';
+
 const INITIAL_STATE = {
+    hidden: true,
     grid: [
         { img: 'https://i.ibb.co/D8mHFNp/img-1.jpg', id: 1, name: '', grid: 'card-2-1', head: 'Aniel Someillan'  },
         { img: 'https://i.ibb.co/n6Tg8MT/img-2.jpg', id: 2, name:  'My Music', grid: 'card-1-1'},
@@ -11,6 +14,11 @@ const INITIAL_STATE = {
 
 const artistReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
+        case artistType.TOGGLE_INFO_HIDDEN:
+            return {
+                ...state,
+                hidden: !state.hidden
+            }
         default: 
             return state;
     }
