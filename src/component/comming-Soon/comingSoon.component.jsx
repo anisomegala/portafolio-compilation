@@ -3,7 +3,7 @@ import Typewriter from 'typewriter-effect';
 import "./comingSoon.style.scss";
 
 const ComingSoon = ({name}) => {
-    const text1 = 'Comming Soon ';
+    const text1 = 'Coming Soon ';
     const text2 = ` ${name} Page`;
    return <div className='text'>
         <Typewriter 
