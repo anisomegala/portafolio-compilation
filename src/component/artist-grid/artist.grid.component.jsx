@@ -1,33 +1,45 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { ToggleInfoHidden } from '../../redux/artistPageReducer/artistActions';
-
+import { ToggleInfo } from '../../redux/artistPageReducer/artistActions';
+import  { createStructuredSelector} from 'reselect';
+import { selectArtistInfoHidden } from '../../redux/artistPageReducer/artistSelector';
 
 
 
 import './artist.grid.style.scss';
 
 
-const GridMenu = ({ id, img, name, grid, head, ToggleInfoHidden }) => (
-        grid.map(({ id, img, name, grid, head }, index ) => (
+const GridMenu = ({ id, img, name, grid, head, ToggleInfoHidden, hidden}) => (
+        grid.map(({ id, img, name, grid, head }) => (
         <div
              className={`images ${grid}`} 
              key={ id } 
              style={{ backgroundImage: `url(${ img })`}}
-             onClick={ ToggleInfoHidden }
+             onClick={() => ToggleInfoHidden(id)}
              >
 
              <div className='grid-content'> 
                  <h1>{ head }</h1>
                  <h2 className='cards-title'>{name}</h2>   
              </div> 
-             
+            {
+                hidden ?
+                 null
+                :
+                <div>
+                    aniel someillan distpach
+                </div>
+            }
         </div>
         ))
 );
 
 const MapDispatchToProps = dispatch => ({
-    ToggleInfoHidden: () => dispatch(ToggleInfoHidden())
+    ToggleInfoHidden: (item) => dispatch(ToggleInfo(item))
 });
 
-export default connect(null, MapDispatchToProps)(GridMenu);
+const mapStateToProps = createStructuredSelector({
+    hidden: selectArtistInfoHidden
+  })
+
+export default connect(mapStateToProps, MapDispatchToProps)(GridMenu);

@@ -6,6 +6,8 @@ import ArtistPage from './pages/artistPage/artist.jsx';
 import Bio from './pages/bioPage/bio.jsx';
 import CoursesPage from './pages/coursesPage/coursesPage.jsx';
 import CheckoutPage from './pages/checkout/checkout.component';
+import WebDeveloper from './pages/webdev_Page/wedDevPage';
+import ModelPage from './pages/modelPage/modelPage';
 
 import { connect } from 'react-redux';
 // import ShopPage from './pages/ShopPage/shop.page';
@@ -20,15 +22,6 @@ import { selectCurrentUser } from './redux/user/userSelector/selectUser';
 import './App.css';
 
 
-
-const WebDeveloper = () => (
-  <div>
-    <h1> Web Developer page</h1>
-  </div>
-);
-
-
-
 class App extends React.Component {
 
   render() {
@@ -40,6 +33,7 @@ class App extends React.Component {
             <Route  exact path='/anielsomeillan/web-developper' component={ WebDeveloper } />
             <Route  exact path='/anielsomeillan/artist' component={ ArtistPage } />
             <Route  exact path='/anielsomeillan/bio' component={ Bio } />
+            <Route  exact path='/anielsomeillan/model' component={ ModelPage } />
             <Route  exact path='/anielsomeillan/my-courses' component={ CoursesPage} />
             <Route  exact path='/checkout' component={ CheckoutPage} />
           </Switch>

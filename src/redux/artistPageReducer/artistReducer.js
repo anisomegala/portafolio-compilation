@@ -1,4 +1,6 @@
-import artistType from './artist.type';
+import * as actions from './artist.type';
+
+
 
 const INITIAL_STATE = {
     hidden: true,
@@ -14,10 +16,11 @@ const INITIAL_STATE = {
 
 const artistReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case artistType.TOGGLE_INFO_HIDDEN:
+        case actions.TOGGLE_INFO_HIDDEN:
             return {
                 ...state,
-                hidden: !state.hidden
+                hidden: !state.hidden[action.payload],
+                
             }
         default: 
             return state;
