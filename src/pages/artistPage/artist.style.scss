@@ -1,12 +1,14 @@
 .startContent {
   width: 90vw;
-  height: 75vh;
+  height: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
   margin: auto;
   padding: 2em;
   position: relative;
+  overflow-x: none;
+  cursor: pointer;
 
   .images {
     display: flex;
@@ -48,3 +50,4 @@
   border-top-right-radius: 5px;
   display: none;
 }
+

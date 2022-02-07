@@ -1,9 +1,4 @@
 import * as actions from './artist.type';
 
-export const ToggleInfo = (id) => ({
-    type: actions.TOGGLE_INFO_HIDDEN,
-    payload: {
-        id
-    }
-    
-});
+export const ShowToggle = id => ({ type: 'SHOW', payload: id});
+export const HideToggle = id => ({ type: 'HIDE', payload: id});
